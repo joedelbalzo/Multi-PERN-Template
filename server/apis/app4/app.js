@@ -1,12 +1,10 @@
 const express = require("express");
 const app4 = express.Router();
+const { Team } = require("../../dbs");
 
-app4.get("/", (req, res, next) => {
-  const message = "Hello from App 4";
-  console.log(message);
-  res.send(message);
+app4.get("/", async (req, res, next) => {
+  const teams = await Team.findAll();
+  res.send(teams);
 });
-
-// Any additional app4-specific routes go here
 
 module.exports = app4;

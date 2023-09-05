@@ -1,12 +1,10 @@
 const express = require("express");
 const app3 = express.Router();
+const { User } = require("../../dbs");
 
-app3.get("/", (req, res, next) => {
-  const message = "Hello from App 3";
-  console.log(message);
-  res.send(message);
+app3.get("/", async (req, res, next) => {
+  const users = await User.findAll();
+  res.send(users);
 });
-
-// Any additional app3-specific routes go here
 
 module.exports = app3;

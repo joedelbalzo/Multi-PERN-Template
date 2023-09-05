@@ -16,8 +16,17 @@ function App() {
 
   return (
     <div>
-      <h1>{message}</h1>
-      <h2>Hey the 4th store works!</h2>
+      <ul>
+        {message.map((m) => {
+          return (
+            <li key={m.id}>
+              {m.sport}: {m.city}
+              {"  "}
+              {m.mascot}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

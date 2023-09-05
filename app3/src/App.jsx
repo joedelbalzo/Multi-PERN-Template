@@ -16,8 +16,11 @@ function App() {
 
   return (
     <div>
-      <h1>{message}</h1>
-      <h2>Hey the 3rd store works!</h2>
+      <ul>
+        {message.map((m) => {
+          return <li key={m.id}>{m.name}</li>;
+        })}
+      </ul>
     </div>
   );
 }

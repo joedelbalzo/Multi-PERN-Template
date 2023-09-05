@@ -1,45 +1,17 @@
 const conn = require("./conn");
-const Question = require("./Question");
-const questionData = require("./questionData");
-const CodingQuestion = require("./CodingQuestion");
-const codingQuestionData = require("./codingQuestionData");
-
-const syncAndSeed = async () => {
-  const [questions] = await Promise.all(
-    questionData.map(async (q) => {
-      return Question.create({
-        category: q.category,
-        question: q.question,
-        codeSnippet: q.codeSnippet,
-        answerOne: q.answerOne,
-        answerTwo: q.answerTwo,
-        answerThree: q.answerThree,
-        answerFour: q.answerFour,
-        answerFive: q.answerFive,
-        timesCorrect: q.timesCorrect,
-        timesIncorrect: q.timesIncorrect,
-      });
-    })
-  );
-  const [codingQuestions] = await Promise.all(
-    codingQuestionData.map(async (q) => {
-      return CodingQuestion.create({
-        category: q.category,
-        question: q.question,
-        inputs: q.inputs,
-        answer: q.answer,
-        code: q.code,
-        codePython: q.codePython,
-        timesCorrect: q.timesCorrect,
-        timesIncorrect: q.timesIncorrect,
-      });
-    })
-  );
-  return [questions, codingQuestions];
-};
+const { Drink, app1SyncAndSeed } = require("./app1/Drink.js");
+const { Guitar, app2SyncAndSeed } = require("./app2/Guitar.js");
+const { User, app3SyncAndSeed } = require("./app3/User.js");
+const { Team, app4SyncAndSeed } = require("./app4/Team.js");
 
 module.exports = {
-  syncAndSeed,
-  Question,
-  CodingQuestion,
+  Drink,
+  Guitar,
+  User,
+  Team,
+  app1SyncAndSeed,
+  app2SyncAndSeed,
+  app3SyncAndSeed,
+  app4SyncAndSeed,
+  conn,
 };
