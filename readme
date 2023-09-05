@@ -1,4 +1,4 @@
-This is a very basic template for running four front-end applications using 1 backend database. 
+This is a very basic template for running four front-end applications using 1 backend database. This is if you want to save money on those damn hosts that charge you for every single web service and database. 
 
 The code is entirely javascript, with the front end stack being React.js, Node.js, and Vite. The back end is Express and PostgreSQL (with Sequelize).
 
