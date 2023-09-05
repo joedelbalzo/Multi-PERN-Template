@@ -1,0 +1,7 @@
+This is a very basic template for running four front-end applications using 1 backend database. 
+
+The code is entirely javascript, with the front end stack being React.js, Node.js, and Vite. The back end is Express and PostgreSQL (with Sequelize).
+
+If you plan on using this template, which you're obviously free to do, rememeber that each application is its own application, and therefore will need it's own git init and npm install. 
+
+You'll have to make plenty of changes as you go in order to access the database, since obviously when you deploy you won't be talking to localhost:5000, but this is a starting point for development. 
