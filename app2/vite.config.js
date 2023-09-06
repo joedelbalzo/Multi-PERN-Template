@@ -22,4 +22,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  base: "NAME OF YOUR REPO",
 });
